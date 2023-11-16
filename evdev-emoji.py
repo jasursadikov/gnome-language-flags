@@ -16,13 +16,11 @@ def iso3166_to_emoji_flag(iso_code):
 for layout in root.findall('.//configItem'):
     short_description = layout.find('shortDescription')
     iso3166_codes = layout.findall('.//iso3166Id')
-
     if short_description is not None and iso3166_codes:
         country_code = iso3166_codes[0].text
-
+        
         try:
             emoji = iso3166_to_emoji_flag(country_code)
-            print(f'{short_description.text} {emoji}')
             short_description.text = emoji
         except IndexError:
             print('Invalid country code:', country_code)
