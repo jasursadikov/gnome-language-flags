@@ -1,11 +1,7 @@
 import xml.etree.ElementTree as ET
-import shutil
 
 evdev_path = '/usr/share/X11/xkb/rules/evdev.xml'
-backup_path = 'evdev.xml.bkp'
 output_file_path = 'evdev.xml'
-
-shutil.copy(evdev_path, backup_path)
 
 tree = ET.parse(evdev_path)
 root = tree.getroot()
@@ -18,7 +14,6 @@ for layout in root.findall('.//configItem'):
     iso3166_codes = layout.findall('.//iso3166Id')
     if short_description is not None and iso3166_codes:
         country_code = iso3166_codes[0].text
-        
         try:
             emoji = iso3166_to_emoji_flag(country_code)
             short_description.text = emoji
