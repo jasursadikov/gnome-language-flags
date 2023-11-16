@@ -1,11 +1,10 @@
 # Flags in evdev.xml
 
-![](img/img.png)
+![](img/img-apple.png)
 
 Enhances language labels in `evdev.xml` by replacing them with Emoji flags based on ISO 3166 codes.
 
 ## Installation
-
 1. Clone this repository.
 2. Run the script to generate `evdev.xml`: `python evdev-emoji.py`
 3. Move the generated `evdev.xml` to the system directory `sudo mv evdev.xml /usr/share/X11/xkb/rules/evdev.xml`
@@ -17,18 +16,27 @@ Enhances language labels in `evdev.xml` by replacing them with Emoji flags based
 
 Change the emoji set using different fonts.
 
-### Arch Linux
+### JoyPixels
+![](img/img-joypixels.png)
+#### ArchLinux
+`paru -S ttf-joypixels`
+#### Ubuntu
+`sudo apt-get install fonts-joypixels`
 
-1. `pacman -S ttf-joypixels`      - Install JoyPixels
-2. `paru -S ttf-twemoji-color`    - Install Twemoji
-3. `paru -S ttf-apple-emoji`      - Install Apple Emoji
-4. `paru -S ttf-mutant-emoji`     - Install Mutant Emoji
-5. `paru -S ttf-mizutama-emoji`   - Install Mizutama Emoji
+---
 
-### Ubuntu
+### Apple Emoji
+![](img/img-apple.png)
+#### ArchLinux
+`paru -S ttf-apple-emoji`
+#### Ubuntu [Similar to Apple Emoji]
+`sudo apt-get install fonts-noto-color-emoji`
 
-1. `sudo apt-get install fonts-joypixels`         - Install JoyPixels
-2. `sudo apt-get install fonts-twemoji`           - Install Twemoji
-3. `sudo apt-get install fonts-noto-color-emoji`  - Install Noto Color Emoji (similar to Apple Emoji)
-4. `sudo apt-get install fonts-mutant-emoji`      - Install Mutant Emoji
-5. `sudo apt-get install fonts-mizutama-emoji`    - Install Mizutama Emoji
+---
+
+### Twemoji
+![](img/img-twemoji.png)
+#### ArchLinux
+`paru -S ttf-twemoji-color`
+#### Ubuntu
+`sudo apt-get install fonts-twemoji`
